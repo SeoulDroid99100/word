@@ -359,7 +359,7 @@ async def handle_game_message(client, message):
         # Send typing action for 3 seconds
         try:
             await client.send_chat_action(chat_id, ChatAction.TYPING)
-            await asyncio.sleep(3)
+            await asyncio.sleep(2)
         except Exception as e:
             await safe_send_message(LOG_CHAT_ID, f"Error sending typing action to {chat_id}: {e}")
         
