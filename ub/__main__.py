@@ -13,7 +13,21 @@ import aiofiles
 from typing import Dict, Set, Optional
 from dotenv import load_dotenv
 from pyrogram.errors import FloodWait
+import logging
 
+# Set up basic logging
+logging.basicConfig(
+    level=logging.INFO,  # Change to DEBUG for more verbosity
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("bot.log"),  # Log to a file named 'bot.log'
+        logging.StreamHandler()          # Also print to console
+    ]
+)
+
+# Optional: Get Pyrogram's logger
+logger = logging.getLogger("pyrogram")
+logger.setLevel(logging.INFO)  # Or DEBUG
 
 # Download NLTK words corpus if not already present
 try:
