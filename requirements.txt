@@ -1,0 +1,6 @@
+pyrogram
+tgcrypto
+wordfreq
+nltk
+aiofiles
+python-dotenv
