@@ -13,6 +13,8 @@ import aiofiles
 from typing import Dict, Set, Optional
 from dotenv import load_dotenv
 from pyrogram.errors import FloodWait
+import ub.server
+server.start_flask()
 
 # Download NLTK words corpus if not already present
 try:
