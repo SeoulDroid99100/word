@@ -13,7 +13,6 @@ import aiofiles
 from typing import Dict, Set, Optional
 from dotenv import load_dotenv
 from pyrogram.errors import FloodWait
-from ub.server import start_flask
 
 
 # Download NLTK words corpus if not already present
@@ -428,5 +427,4 @@ async def on_startup(client, update, users, chats):
 
 # Run the bot
 if __name__ == "__main__":
-    start_flask()
     app.run()
