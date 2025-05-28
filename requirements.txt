@@ -4,3 +4,4 @@ wordfreq
 nltk
 aiofiles
 python-dotenv
+Flask
