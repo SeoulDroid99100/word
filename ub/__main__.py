@@ -13,7 +13,7 @@ import aiofiles
 from typing import Dict, Set, Optional
 from dotenv import load_dotenv
 from pyrogram.errors import FloodWait
-from ub.server import start_flask
+import ub.server.start_flask
 
 
 # Download NLTK words corpus if not already present
@@ -420,7 +420,6 @@ async def on_startup(client, update, users, chats):
     if not INITIALIZED:
         try:
             await load_config()
-            await start_flask()
             await safe_send_message(LOG_CHAT_ID, "Bot started successfully")
             INITIALIZED = True
         except Exception as e:
