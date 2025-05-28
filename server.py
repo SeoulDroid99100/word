@@ -9,7 +9,7 @@ def index():
     return "Flask server is running!"
 
 def run():
-    flask.run(host='0.0.0.0', port=8080)
+    flask.run(host='0.0.0.0', port=7860)
 
 def start_flask():
     thread = Thread(target=run)
