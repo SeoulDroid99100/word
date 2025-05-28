@@ -13,7 +13,7 @@ import aiofiles
 from typing import Dict, Set, Optional
 from dotenv import load_dotenv
 from pyrogram.errors import FloodWait
-import ub.server.start_flask
+from ub.server import start_flask
 
 
 # Download NLTK words corpus if not already present
@@ -427,8 +427,6 @@ async def on_startup(client, update, users, chats):
             await safe_send_message(LOG_CHAT_ID, f"Failed to initialize bot: {e}")
 
 # Run the bot
-try:
-    print("Bot is running...")
+if __name__ == "__main__":
+    start_flask()
     app.run()
-except Exception as e:
-    print(f"Bot failed to start: {e}")
